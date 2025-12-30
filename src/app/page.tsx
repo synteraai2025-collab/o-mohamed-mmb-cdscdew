@@ -1,40 +1,39 @@
-import Image from "next/image";
+import SalesMetrics from '@/components/SalesMetrics';
+import SalesVisualizations from '@/components/SalesVisualizations';
+import DateRangeFilter from '@/components/DateRangeFilter';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50/30 flex items-center justify-center px-6">
-      <div className="text-center max-w-md w-full">
-        {/* Logo with subtle elegance */}
-        <div className="mb-8">
-          <div className="relative inline-block">
-            {/* Logo container with refined shadow */}
-            <div className="w-20 h-20 flex items-center justify-center mx-auto">
-              <Image 
-                src="/images/syntera-logo.svg" 
-                alt="Syntera" 
-                width={64}
-                height={64}
-                className="transition-transform duration-300 hover:scale-110"
-              />
-            </div>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground py-12">
+        <div className="container mx-auto max-w-7xl px-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Sales Dashboard
+          </h1>
+          <p className="text-xl text-primary-foreground/90 max-w-2xl">
+            Monitor your sales performance with real-time metrics, interactive visualizations, and advanced filtering capabilities.
+          </p>
+        </div>
+      </div>
+
+      {/* Main Content Grid */}
+      <div className="container mx-auto max-w-7xl px-6 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Sales Metrics Section */}
+          <div className="lg:col-span-2">
+            <SalesMetrics />
+          </div>
+          
+          {/* Date Range Filter Section */}
+          <div className="lg:col-span-1">
+            <DateRangeFilter />
           </div>
         </div>
-        
-        {/* Clean loading state */}
-        <div className="space-y-8">
-          {/* Main loading indicator */}
-          <div className="space-y-6">
-            <div className="flex items-center justify-center space-x-3">
-              <p className="text-xl text-slate-700 font-medium">
-                AI agent is designing your website...
-              </p>
-            </div>
 
-            {/* Refined spinner */}
-            <div className="flex items-center justify-center space-x-3">
-              <div className="w-8 h-8 border-4 border-solid border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
-            </div>
-          </div>
+        {/* Sales Visualizations Section - Full Width */}
+        <div className="mt-8">
+          <SalesVisualizations />
         </div>
       </div>
     </div>
