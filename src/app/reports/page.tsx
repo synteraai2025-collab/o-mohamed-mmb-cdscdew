@@ -20,11 +20,11 @@ export default function ReportsPage() {
           <ReportFilters />
         </div>
 
-        {/* Main Content Grid */}
+        {/* Main Content Grid - Responsive Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Visualizations Section */}
+          {/* Visualizations Section - Left Column on Desktop */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-sm border p-6">
+            <div className="bg-white rounded-lg shadow-sm border p-6 h-full">
               <h2 className="text-xl font-semibold text-gray-900 mb-4">
                 Report Visualizations
               </h2>
@@ -32,7 +32,7 @@ export default function ReportsPage() {
             </div>
           </div>
 
-          {/* Table Section */}
+          {/* Table Section - Right Column on Desktop */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-sm border p-6">
               <div className="flex items-center justify-between mb-4">
@@ -48,8 +48,8 @@ export default function ReportsPage() {
           </div>
         </div>
 
-        {/* Summary Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        {/* Summary Cards Grid - Responsive 4 Column Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           <div className="bg-white rounded-lg shadow-sm border p-6">
             <div className="flex items-center justify-between">
               <div>
@@ -121,3 +121,4 @@ export default function ReportsPage() {
     </div>
   );
 }
+
